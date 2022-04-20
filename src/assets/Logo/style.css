@@ -1,0 +1,17 @@
+.logo-group {
+    text-align: center;
+    cursor: pointer;
+    text-shadow: 2px 3px 3px rgba(156, 133, 4, 0.497);
+}
+
+.logo-group__name {
+    font-size: 32px;
+    color: rgb(26, 102, 2);
+    margin: 0;
+}
+
+.logo-group__title {
+    font-weight: 500;
+    color: rgb(95, 81, 2);
+    margin: 0;
+}
