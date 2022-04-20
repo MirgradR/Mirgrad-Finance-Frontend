@@ -1,0 +1,15 @@
+.avatar {
+    width: 60px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(186, 214, 177, 0.371);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.avatar:hover {
+    background-color: rgba(151, 203, 133, 0.573);
+}
