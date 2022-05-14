@@ -1,0 +1,13 @@
+.auth {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-toggle__isRegistration {
+    color: rgb(76, 76, 227);
+    cursor: pointer;
+}
+
+.auth-toggle__isRegistration:hover {
+    color: rgb(6, 6, 165);
+}

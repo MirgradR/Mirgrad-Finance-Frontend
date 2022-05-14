@@ -7,29 +7,39 @@ import { authSlice } from '../../store/reducers/authReducer'
 import './style.css'
 
 interface Values {
+    userName: string;
     password: string;
     email: string;
 }
 
-const LoginForm: React.FC<AuthForm> = ({ toggleIsRegistration }) => {
+const RegistrationForm: React.FC<AuthForm> = ({ toggleIsRegistration }) => {
     const dispatch = useDispatch()
     
-    const login = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
-        dispatch(authSlice.actions.loginUser(values))
+    const registration = (values: Values, { setSubmitting }: FormikHelpers<Values>) => {
+        dispatch(authSlice.actions.registrationUser(values))
         setSubmitting(false)
     }
 
     return (
         <div className='login-form'>
-            <h1>Sign in</h1>
+            <h1>Create account</h1>
             <Formik
                 initialValues={{
+                    userName: '',
                     password: '',
                     email: '',
                 }}
-                onSubmit={login}
+                onSubmit={registration}
             >
                 <Form className='login-form__modal'>
+                    <label htmlFor='userName'>User Name</label>
+                    <Field
+                        className='input-field'
+                        id='userName'
+                        name='userName'
+                        placeholder='John'
+                    />
+
                     <label htmlFor='email'>Email</label>
                     <Field
                         className='input-field'
@@ -47,14 +57,14 @@ const LoginForm: React.FC<AuthForm> = ({ toggleIsRegistration }) => {
                         name='password'
                         placeholder='password'
                     />
-                    <h3 className='auth-toggle__isRegistration' onClick={() => toggleIsRegistration(true)} >
-                        Do you want create an account?
+                    <h3 className='auth-toggle__isRegistration' onClick={() => toggleIsRegistration(false)}>
+                        Do you have an account?
                     </h3>
-                    <SubmitButton type='submit' title='Signin' />
+                    <SubmitButton type='submit' title='Create' />
                 </Form>
             </Formik>
         </div>
     )
 }
 
-export default LoginForm
+export default RegistrationForm

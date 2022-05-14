@@ -1,11 +1,11 @@
 import React from 'react'
-import { Login } from '../'
+import { Router } from '../../routes/Router'
 import './style.css'
 
-const Main = () => {
+const Main: React.FC = () => {
     return (
         <div className='main'>
-            <Login />
+            <Router />
         </div>
     )
 }
