@@ -1,12 +1,19 @@
 import React from 'react'
-import { Avatar, Logo } from '../../assets'
+import { useSelector } from 'react-redux'
+import { Avatar, Logo, Logout } from '../../assets'
+import { RootState } from '../../store/store'
 import './style.css'
 
-const Header = () => {
+const Header: React.FC = () => {
+    const isAuth = useSelector((state: RootState) => state.auth.isAuth)
+
     return (
         <header className='header'>
             <Logo />
-            <Avatar />
+            {isAuth
+                ? <Logout />
+                : <Avatar />
+            }
         </header>
     )
 }

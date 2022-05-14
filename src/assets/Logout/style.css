@@ -1,0 +1,11 @@
+.logout-logo {
+    border: 1px solid white;
+    padding: 5px;
+    background-color: white;
+    align-self: center;
+    cursor: pointer;
+}
+
+.logout-logo:hover {
+    background-color: rgb(183, 185, 190);
+}
