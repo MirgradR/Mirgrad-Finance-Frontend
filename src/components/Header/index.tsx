@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Avatar, Logo, Logout } from '../../assets'
+import { MenuHeader } from '..'
 import { RootState } from '../../store/store'
+import { Avatar, Logo, Logout } from '../../assets'
+
 import './style.css'
 
 const Header: React.FC = () => {
@@ -10,6 +12,7 @@ const Header: React.FC = () => {
     return (
         <header className='header'>
             <Logo />
+            <MenuHeader />
             {isAuth
                 ? <Logout />
                 : <Avatar />

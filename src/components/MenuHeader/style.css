@@ -1,0 +1,8 @@
+.header-menu__list {
+    display: flex;
+    flex-direction: row;
+}
+.header-menu__list>li {
+    margin-right: 15px;
+    font-size: 20px;
+}

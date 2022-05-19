@@ -1,3 +1,4 @@
 export { default as Main} from './Main'
 export { default as Auth} from './Auth'
 export { default as Content} from './Content'
+export { default as Stocks} from './Stocks'
