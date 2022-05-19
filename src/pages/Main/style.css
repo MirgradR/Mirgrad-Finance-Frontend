@@ -1,4 +1,7 @@
 .main {
     margin-top: 80px;
     padding: 10px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px
 }

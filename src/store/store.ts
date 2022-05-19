@@ -2,11 +2,14 @@ import createSagaMiddleware from '@redux-saga/core'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { authSaga } from './sagas/authSagas'
 import authReducer from './reducers/authReducer'
+import stocksReducer from './reducers/stocksReducer'
+import { stockSaga } from './sagas/stockSagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    stocks: stocksReducer
 })
 
 const setupStore = configureStore({
@@ -20,6 +23,7 @@ const setupStore = configureStore({
 })
 
 sagaMiddleware.run(authSaga);
+sagaMiddleware.run(stockSaga);
 
 export type RootState = ReturnType<typeof setupStore.getState>
 
