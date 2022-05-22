@@ -6,6 +6,9 @@ const Main: React.FC = () => {
     return (
         <div className='main'>
             <Router />
+            <div>
+                Widget
+            </div>
         </div>
     )
 }

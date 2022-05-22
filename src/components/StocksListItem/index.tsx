@@ -9,7 +9,14 @@ interface Props {
 const StocksListItem: React.FC<Props> = ({stock}) => {
 
     return (
-        <div>{stock.description}</div>
+        <div className='main-stocks__list-item'>
+            <h3>{stock.description}</h3>
+            <div className='list-item__block-type'>
+                <p>{stock.displaySymbol || stock.symbol}</p>
+                <p>{stock.type || 'New tool'}</p>
+            </div>
+            
+        </div>
     )
 }
 
