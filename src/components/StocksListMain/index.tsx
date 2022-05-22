@@ -10,7 +10,7 @@ const StocksListMain: React.FC = () => {
     return (
         <div className='main-stocks__list'>
             {stocks.map(stock => {
-                return <StocksListItem stock={stock} />
+                return <StocksListItem stock={stock} key={stock._id} />
             })}
         </div>
     )

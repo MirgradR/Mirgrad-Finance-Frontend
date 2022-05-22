@@ -3,17 +3,21 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 import { Stock } from '../../models/Stock'
 import stocksApi from '../../api/stocksApi'
 
-export type CreateUserAction = {
+export type GetStocksAction = {
     type: string,
     payload: {
-        stocks: Stock[]
+        name: string
     },
 }
+export interface ResponseGetStocks {
+    stocks: Stock[],
+    count: number
+}
 
-function* getStocks() {
+function* getStocks(action: GetStocksAction) {
     try {
         //@ts-ignore
-        const response: Stock[] = yield call(stocksApi.getStocks);
+        const response: ResponseGetStocks = yield call(stocksApi.getStocks, action.payload);
         yield put(stocksSlice.actions.getStocksSuccess(response))
     } catch (error) {
         yield put(stocksSlice.actions.getStocksError((error as Error).message))
