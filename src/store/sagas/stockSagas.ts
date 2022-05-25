@@ -6,7 +6,9 @@ import stocksApi from '../../api/stocksApi'
 export type GetStocksAction = {
     type: string,
     payload: {
-        name: string
+        name: string,
+        limit: number,
+        offset: number,
     },
 }
 export interface ResponseGetStocks {
