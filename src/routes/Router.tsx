@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PrivateRoute from './PrivatRoute'
 import PublicRoute from './PublicRoute'
-import { Auth, Content, Stocks } from '../pages'
+import { Auth, Content, StockProfile, Stocks } from '../pages'
 
 export const Router = () => {
     return (
@@ -15,6 +15,11 @@ export const Router = () => {
             <Route path="/stocks" element={
                 <PrivateRoute>
                     <Stocks />
+                </PrivateRoute>
+            } />
+            <Route path="/stock/profile" element={
+                <PrivateRoute>
+                    <StockProfile />
                 </PrivateRoute>
             } />
             <Route path="/auth" element={
