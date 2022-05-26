@@ -10,7 +10,7 @@ const StocksListItem: React.FC<Props> = ({stock}) => {
 
     return (
         <div className='main-stocks__list-item'>
-            <h3>{stock.description}</h3>
+            <h3 className='list-item__title'>{stock.description}</h3>
             <div className='list-item__block-type'>
                 <p>{stock.displaySymbol || stock.symbol}</p>
                 <p>{stock.type || 'New tool'}</p>
