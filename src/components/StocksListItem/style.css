@@ -1,16 +1,21 @@
 .main-stocks__list-item {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0px 11px 25px 8px rgba(34, 60, 80, 0.1);
 }
+.list-item__title {
+    margin: 0;
+}
+
 .list-item__block-type {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end;
 }
 .list-item__block-type > p {
