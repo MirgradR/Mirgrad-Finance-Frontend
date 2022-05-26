@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Stock } from '../../models/Stock'
+import { Stock, StockProfile } from '../../models/Stock'
 import { ResponseGetStocks } from '../sagas/stockSagas'
 
 export interface StocksState {
     stocks: Stock[],
+    stockProfile: StockProfile,
     count: number,
     loading: boolean,
     error: string,
@@ -11,6 +12,7 @@ export interface StocksState {
 
 const initialState: StocksState = {
     stocks: [],
+    stockProfile: {} as StockProfile,
     loading: false,
     error: '',
     count: 0
@@ -29,6 +31,17 @@ export const stocksSlice = createSlice({
             state.loading = false
         },
         getStocksError(state, action: PayloadAction<string>) {
+            state.error = action.payload
+            state.loading = false
+        },
+        getStockProfile(state, action) {
+            state.loading = true
+        },
+        getStockProfileSuccess(state, action: PayloadAction<StockProfile>) {
+            state.stockProfile = action.payload
+            state.loading = false
+        },
+        getStockProfileError(state, action: PayloadAction<string>) {
             state.error = action.payload
             state.loading = false
         },
