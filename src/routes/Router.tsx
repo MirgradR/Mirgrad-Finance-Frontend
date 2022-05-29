@@ -17,7 +17,7 @@ export const Router = () => {
                     <Stocks />
                 </PrivateRoute>
             } />
-            <Route path="/stock/profile" element={
+            <Route path="/stocks/profile" element={
                 <PrivateRoute>
                     <StockProfile />
                 </PrivateRoute>

@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios'
-import { Stock } from '../models/Stock'
+import { Stock, StockPrice } from '../models/Stock'
 import { StockProfile } from './../models/Stock'
 import networkClient from './networkClient'
 
@@ -22,6 +22,10 @@ class StocksApi {
     }
     getStockProfile = async (symbol: string): Promise<AxiosResponse<StockProfile>> => {
         const response = await networkClient.get(`/stocks/${symbol}/profile`)      
+        return response.data
+    }
+    getStockPrice = async (symbol: string): Promise<AxiosResponse<StockPrice>> => {
+        const response = await networkClient.get(`/stocks/${symbol}/price`)      
         return response.data
     }
 }

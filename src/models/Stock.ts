@@ -28,3 +28,13 @@ export interface StockProfile {
     finnhubIndustry: string,
     owner?: string
 }
+
+export interface StockPrice {
+    o: number,  // Open
+    h: number,  // Maximum of Day
+    l: number,  // Minimal of Day
+    c: number,  // Current price
+    pc: number, // Previous close price
+    d: number,  // Change
+    dp: number  // Chenge percent
+}

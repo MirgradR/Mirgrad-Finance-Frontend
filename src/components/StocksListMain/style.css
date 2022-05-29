@@ -1,8 +1,10 @@
 .main-stocks__list {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
     overflow: auto;
     max-height: 68vh;
+    height: 68vh;
     box-sizing: padding-box;
 }

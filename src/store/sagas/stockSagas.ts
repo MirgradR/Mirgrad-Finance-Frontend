@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { StockProfile } from './../../models/Stock'
+import { StockPrice, StockProfile } from './../../models/Stock'
 import { stocksSlice } from './../reducers/stocksReducer'
 import { Stock } from '../../models/Stock'
 import stocksApi from '../../api/stocksApi'
@@ -13,6 +13,10 @@ export type GetStocksAction = {
     },
 }
 export type GetStockProfileAction = {
+    type: string,
+    payload: string,
+}
+export type GetStockPriceAction = {
     type: string,
     payload: string,
 }
@@ -41,7 +45,18 @@ function* getStockProfile(action: GetStockProfileAction) {
     }
 }
 
+function* getStockPrice(action: GetStockPriceAction) {
+    try {
+        //@ts-ignore
+        const response: StockPrice = yield call(stocksApi.getStockPrice, action.payload);
+        yield put(stocksSlice.actions.getStockPriceSuccess(response))
+    } catch (error) {
+        yield put(stocksSlice.actions.getStockPriceError((error as Error).message))
+    }
+}
+
 export function* stockSaga() {
     yield takeEvery(stocksSlice.actions.getStocks, getStocks)
     yield takeEvery(stocksSlice.actions.getStockProfile, getStockProfile)
+    yield takeEvery(stocksSlice.actions.getStockPrice, getStockPrice)
 }

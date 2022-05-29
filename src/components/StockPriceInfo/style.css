@@ -1,0 +1,29 @@
+.stock-price__info{
+    border: 1px solid #000;
+    padding: 5px 10px;
+    width: 100%;
+}
+.stock-price__info p{
+    margin: 0;
+}
+.price-info__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+.price-info__block > div{
+    display: flex;
+    align-items: center;
+}
+.stock-price__info h3{
+    margin: 0;
+    font-weight: 300;
+    color: rgba(114, 124, 132, 0.727);
+}
+.current-price__raising {
+    color: green;
+}
+.current-price__failing {
+    color: red;
+}

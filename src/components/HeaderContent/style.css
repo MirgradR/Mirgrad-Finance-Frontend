@@ -1,0 +1,19 @@
+.header-content {
+    padding: 15px 15px;
+    display: flex;
+    background-color: rgb(192, 229, 238);
+    border-top: 1px solid rgba(117, 107, 107, 0.155);
+}
+.header-content__back {
+    width: 150px;
+    cursor: pointer;
+}
+.header-content__menu {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.header-content__menu > p {
+    margin: 0;
+    margin-right: 20px;
+}
