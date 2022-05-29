@@ -1,0 +1,16 @@
+.stock-profile__card {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    padding: 10px;
+}
+.stock-profile__card-logo {
+    align-self: flex-start;
+    width: 80px;
+}
+.stock-profile__card-info {
+    margin-left: 20px;
+}
+.stock-profile__card-info__title {
+    margin-top: 0;
+}
