@@ -1,7 +1,7 @@
 import axios  from 'axios'
 import configService from '../services/configService'
 
-export const API_URL = 'http://localhost:5000/api' //configService.getByKey('API_BASE_URL_DEV')
+export const API_URL = configService.getByKey('REACT_APP_API_BASE_URL_DEV')
 
 const $axios = axios.create({
   withCredentials: true,

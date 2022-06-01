@@ -16,7 +16,10 @@ const ProfileStockCard: React.FC = () => {
 
     return (
         <div className='stock-profile__card'>
-            <img className='stock-profile__card-logo' src={stockProfile.logo} alt={stockProfile.ticker} />
+            {stockProfile.logo 
+                ? <img className='stock-profile__card-logo' src={stockProfile.logo} alt={stockProfile.ticker} />
+                : <div className='stock-profile__card-logo__none'>?</div>
+            }
             <div className='stock-profile__card-info'>
                 <h3 className='stock-profile__card-info__title'>{stockProfile.name}</h3>
                 <p>Country: {stockProfile.country}</p>
