@@ -15,7 +15,7 @@ const StockPriceInfo: React.FC<Props> = ({ stockPrice, stockProfile }) => {
     },[])
 
     const priceFormat = (price: number) => {
-        return isRaising ? `+${price.toFixed(2)}` : price.toFixed(2);
+        return isRaising ? `+${price?.toFixed(2)}` : price?.toFixed(2);
     }
     
     return (
@@ -23,7 +23,7 @@ const StockPriceInfo: React.FC<Props> = ({ stockPrice, stockProfile }) => {
             <div className='price-info__block'>
                 <h3>Price:</h3>
                 <div>
-                    <p>{stockPrice.c}</p>
+                    <p className='price-info__block-current-price'>{stockPrice.c}</p>
                     <p className={isRaising ? 'current-price__raising' : 'current-price__failing'}>
                         {priceFormat(stockPrice.d)} ({priceFormat(stockPrice.dp)}%) {isRaising ? <>&#129045;</> : <>&#129047;</>}
                     </p> 

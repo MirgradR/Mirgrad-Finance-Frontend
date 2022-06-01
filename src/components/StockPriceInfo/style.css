@@ -6,6 +6,9 @@
 .stock-price__info p{
     margin: 0;
 }
+p.price-info__block-current-price {
+    margin-right: 10px;
+}
 .price-info__block {
     display: flex;
     justify-content: space-between;
