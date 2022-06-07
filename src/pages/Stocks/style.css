@@ -1,6 +1,6 @@
 .main-stocks {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 6fr 3fr;
 }
 
 .stocks-content {

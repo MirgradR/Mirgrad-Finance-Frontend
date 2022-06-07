@@ -4,12 +4,15 @@ import { authSaga } from './sagas/authSagas'
 import authReducer from './reducers/authReducer'
 import stocksReducer from './reducers/stocksReducer'
 import { stockSaga } from './sagas/stockSagas'
+import { newsSaga } from './sagas/newsSagas'
+import newsReducer from './reducers/newsReducer'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    stocks: stocksReducer
+    stocks: stocksReducer,
+    news: newsReducer
 })
 
 const setupStore = configureStore({
@@ -24,6 +27,7 @@ const setupStore = configureStore({
 
 sagaMiddleware.run(authSaga);
 sagaMiddleware.run(stockSaga);
+sagaMiddleware.run(newsSaga);
 
 export type RootState = ReturnType<typeof setupStore.getState>
 
