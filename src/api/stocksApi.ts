@@ -1,18 +1,11 @@
 import { AxiosResponse } from 'axios'
+import { createRequestUrl } from '../helpers/createRequestUrl'
 import { Stock, StockPrice } from '../models/Stock'
 import { StockProfile } from './../models/Stock'
 import networkClient from './networkClient'
 
 export interface StockResponse {
     stocks: Stock[]
-}
-
-const createRequestUrl = (filters: any) => {
-    let url = '?'
-    for (let key in filters) {
-        url += key + '=' + filters[key] + '&'
-    }
-    return url.slice(0, -1)
 }
 
 class StocksApi {
