@@ -7,13 +7,23 @@
 .header-content__back {
     width: 150px;
     cursor: pointer;
-}
-.header-content__menu {
-    display: flex;
-    width: 100%;
-    justify-content: center;
+    
 }
 .header-content__menu > p {
     margin: 0;
     margin-right: 20px;
+}
+.header-content__list {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: 0 auto;
+}
+.header-content__list>li {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.header-content__active {
+    text-decoration: underline;
 }

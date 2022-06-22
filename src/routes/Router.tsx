@@ -2,7 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PrivateRoute from './PrivatRoute'
 import PublicRoute from './PublicRoute'
-import { Auth, Content, StockProfile, Stocks } from '../pages'
+import { Auth, Content, Stocks } from '../pages'
+import StockInfo from '../pages/StockInfo'
 
 export const Router = () => {
     return (
@@ -17,9 +18,9 @@ export const Router = () => {
                     <Stocks />
                 </PrivateRoute>
             } />
-            <Route path="/stocks/profile" element={
+            <Route path="/stocks/info/*" element={
                 <PrivateRoute>
-                    <StockProfile />
+                    <StockInfo />
                 </PrivateRoute>
             } />
             <Route path="/auth" element={
