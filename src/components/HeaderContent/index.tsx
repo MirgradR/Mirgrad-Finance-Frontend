@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import './style.css'
 
 const HeaderContent: React.FC = () => {
@@ -7,12 +7,18 @@ const HeaderContent: React.FC = () => {
 
     return (
         <div className='header-content'>
-            <div className='header-content__back' onClick={() => navigate(-1)}>&#9668; BACK</div>
-            <div className='header-content__menu'>
-                <p>Profile</p>
-                <p>News</p>
-                <p>Analytics</p>
-            </div>
+            <p className='header-content__back' onClick={() => navigate('/stocks')}>&#9668; BACK</p>
+            <ul className='header-content__list'>
+                <li className='header-content__list-item'>
+                    <NavLink className={({ isActive }) => (isActive ? "header-content__active" : "header-content__link")} to="profile">Profile</NavLink >
+                </li>
+                <li className='header-content__list-item'>
+                    <NavLink className={({ isActive }) => (isActive ? "header-content__active" : "header-content__link")} to="news">News</NavLink >
+                </li>
+                <li className='header-content__list-item'>
+                    <NavLink className={({ isActive }) => (isActive ? "header-content__active" : "header-content__link")} to="analytics">Analytics</NavLink >
+                </li>
+            </ul>
         </div>
     )
 }

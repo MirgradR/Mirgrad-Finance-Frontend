@@ -11,7 +11,7 @@ const StocksListItem: React.FC<Props> = ({stock}) => {
     const navigate = useNavigate()
 
     const openStockProfile = () => {
-        navigate('/stocks/profile', { state: stock })
+        navigate('/stocks/info', { state: stock })
     }
 
     return (
